@@ -11,16 +11,29 @@ const Home: NextPage = () => {
     slidesToShow: 1.2,
     slidesToScroll: 1,
   }
+
+  const dataArray = ['1', '2', '3']
+
+  const generateCards = dataArray.map((item, i) => {
+    return (
+      <div className="px-10 align-middle">
+        <div className="flex h-[100px] w-[100%] justify-center border bg-red-100">
+          {item}
+        </div>
+      </div>
+    )
+  })
+
   return (
     <>
       <Head>
         <title>Create Next App</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
-      <section className="min-h-screen">
+      <section className="min-h-screen px-10">
         <div>
           <h2>Potential implementation of carousel</h2>
+          <br />
           <Slider {...settings}>
             <div className="px-10 align-middle">
               <div className="flex h-[100px] w-[100%] justify-center border bg-red-100">
@@ -38,9 +51,14 @@ const Home: NextPage = () => {
               </div>
             </div>
           </Slider>
-        </div>
-      </section>
 
+          <br />
+          <br />
+          <br />
+
+          <Slider {...settings}>{generateCards}</Slider>
+        </div>
+      </section>{' '}
       {/* 
       <div className="flex min-h-screen flex-col items-center justify-center py-2">
         <main className="flex w-full flex-1 flex-col items-center justify-center px-20 text-center">
