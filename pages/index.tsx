@@ -4,16 +4,24 @@ import Image from 'next/image'
 import Slider from 'react-slick'
 
 const Home: NextPage = () => {
+  {
+    /* The following "settings" come from this example: 
+     https://react-slick.neostack.com/docs/get-started/
+
+     Need the links/scripts on "_document.tsx" to work
+    */
+  }
   const settings = {
     dots: true,
     infinite: false,
     speed: 500,
-    slidesToShow: 1.2,
+    slidesToShow: 1.2, // modified setting to achieve the "show 1/3 of next card" effect
     slidesToScroll: 1,
   }
 
-  const dataArray = ['1', '2', '3']
+  const dataArray = ['1', '2', '3'] // mock-data array
 
+  //Function to generate cards
   const generateCards = dataArray.map((item, i) => {
     return (
       <div className="px-10 align-middle">
@@ -27,12 +35,14 @@ const Home: NextPage = () => {
   return (
     <>
       <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
+        <title>React Slider Test</title>
       </Head>
-      <section className="min-h-screen px-10">
+      {/* Hardcoded */}
+      <section className="min-h-screen px-10 py-10">
         <div>
-          <h2>Potential implementation of carousel</h2>
+          <h2 className="font-semibold	">
+            Potential implementation of carousel
+          </h2>
           <br />
           <Slider {...settings}>
             <div className="px-10 align-middle">
@@ -56,7 +66,13 @@ const Home: NextPage = () => {
           <br />
           <br />
 
-          <Slider {...settings}>{generateCards}</Slider>
+          <section>
+            <h2 className="font-semibold	">
+              Populated via array.<code>map</code>
+            </h2>
+            <br />
+            <Slider {...settings}>{generateCards}</Slider>
+          </section>
         </div>
       </section>{' '}
       {/* 
