@@ -1,8 +1,16 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
+import Slider from 'react-slick'
 
 const Home: NextPage = () => {
+  const settings = {
+    dots: true,
+    infinite: false,
+    speed: 500,
+    slidesToShow: 1.2,
+    slidesToScroll: 1,
+  }
   return (
     <>
       <Head>
@@ -11,34 +19,25 @@ const Home: NextPage = () => {
       </Head>
 
       <section className="min-h-screen">
-        <main className="sm:flex md:flex">
-          <div>a</div>
-          <div>a</div>
-          <div>a</div>
-        </main>
-
-        <div className="flex sm:flex-row md:flex-row">
-          <div className="rounded-xl bg-white px-6 py-8 shadow-xl ring-1 ring-slate-900/5 dark:bg-slate-900">
-            <div>some icon would be here</div>
-            <h3 className="mt-5 text-base font-medium tracking-tight text-slate-900 dark:text-white">
-              Writes Upside-Down
-            </h3>
-            <p className="mt-2 text-sm text-slate-500 dark:text-slate-400">
-              The Zero Gravity Pen can be used to write in any orientation,
-              including upside-down. It even works in outer space.
-            </p>
-          </div>
-
-          <div className="rounded-xl bg-white px-6 py-8 shadow-xl ring-1 ring-slate-900/5 dark:bg-slate-900">
-            <div>some icon would be here</div>
-            <h3 className="mt-5 text-base font-medium tracking-tight text-slate-900 dark:text-white">
-              Writes Upside-Down
-            </h3>
-            <p className="mt-2 text-sm text-slate-500 dark:text-slate-400">
-              The Zero Gravity Pen can be used to write in any orientation,
-              including upside-down. It even works in outer space.
-            </p>
-          </div>
+        <div>
+          <h2>Potential implementation of carousel</h2>
+          <Slider {...settings}>
+            <div className="px-10 align-middle">
+              <div className="flex h-[100px] w-[100%] justify-center border bg-red-100">
+                1
+              </div>
+            </div>
+            <div className="px-10 align-middle">
+              <div className="flex h-[100px] w-[100%] justify-center border bg-blue-100">
+                2
+              </div>
+            </div>
+            <div className="px-10 align-middle">
+              <div className="flex h-[100px] w-[100%] justify-center border bg-black text-white">
+                3
+              </div>
+            </div>
+          </Slider>
         </div>
       </section>
 
