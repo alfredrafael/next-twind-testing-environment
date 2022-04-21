@@ -8,14 +8,14 @@ const Home: NextPage = () => {
     /* The following "settings" come from this example: 
      https://react-slick.neostack.com/docs/get-started/
 
-     Need the links/scripts on "_document.tsx" to work
+     We also need the css links on "_document.tsx" to work
     */
   }
   const settings = {
     dots: true,
     infinite: false,
     speed: 500,
-    slidesToShow: 1.2, // modified setting to achieve the "show 1/3 of next card" effect
+    slidesToShow: 1.2, // modified to achieve the "showing 1/3 of next card" effect
     slidesToScroll: 1,
   }
 
