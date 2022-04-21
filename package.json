@@ -12,6 +12,7 @@
     "react-slick": "^0.29.0"
   },
   "devDependencies": {
+    "@netlify/plugin-nextjs": "^4.4.2",
     "@types/node": "17.0.4",
     "@types/react": "17.0.38",
     "@types/react-slick": "^0.23.8",
