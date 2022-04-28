@@ -1,32 +1,64 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
-import Slider from 'react-slick'
+import data from './api/data.json'
 
 const Home: NextPage = () => {
-  {
-    /* The following "settings" come from this example: 
-     https://react-slick.neostack.com/docs/get-started/
-
-     We also need the css links on "_document.tsx" to work
-    */
-  }
-  const settings = {
-    dots: true,
-    infinite: false,
-    speed: 500,
-    slidesToShow: 1.2, // modified to achieve the "showing 1/3 of next card" effect
-    slidesToScroll: 1,
-  }
-
-  const dataArray = ['1', '2', '3'] // mock-data array
-
+  console.log(data)
   //Function to generate cards
-  const generateCards = dataArray.map((item, i) => {
+  const generateCards = data.map((item, i) => {
     return (
-      <div className="px-10 align-middle">
-        <div className="flex h-[100px] w-[100%] justify-center border bg-red-100">
-          {item}
+      <div className="align-middle" key={i}>
+        <div className="mt-6 w-80 rounded-xl border p-6 text-left">
+          <div className="mb-4">
+            <strong>
+              <i>Title:</i>
+            </strong>
+            <span className="my-3">&nbsp;{item.title}</span>
+          </div>
+          <hr />
+          <div className="flex">
+            {/* Col 1 //////////////// */}
+            <div className="mb-6 flex-1">
+              <h1 className="mt-4 font-bold">
+                <i>Ticket:</i>
+              </h1>
+              <a href="https://magentatech.atlassian.net/browse/TRB-1619">
+                <p className="font-bold text-blue-500">{item.ticket}</p>
+              </a>
+              <br />
+              <h1 className="m-0 font-bold">
+                <i>Picture:</i>
+              </h1>
+              <a href={item.picture}>
+                <p className="font-bold text-blue-500">Picture Link</p>
+              </a>{' '}
+            </div>
+
+            {/* Col 2 //////////////// */}
+
+            <div className="flex-1 text-right">
+              <h1 className="mt-4 font-bold">
+                <i>Page:</i>
+              </h1>
+              <a href={item.pageLink}>
+                <p className="font-bold text-blue-500">{item.page}</p>
+              </a>
+              <br />
+              <h1 className="m-0 font-bold">
+                <i>Figma:</i>
+              </h1>
+              <a href={item.figma}>
+                <p className="font-bold text-blue-500">Design Link</p>
+              </a>
+            </div>
+          </div>
+          {/* Comment /////////// */}
+          <hr />
+          <strong>
+            <p className="my-4">Comment:</p>
+          </strong>
+          {item.comment}
         </div>
       </div>
     )
@@ -35,103 +67,17 @@ const Home: NextPage = () => {
   return (
     <>
       <Head>
-        <title>React Slider Test</title>
+        <title>My Testing Environment</title>
       </Head>
-      {/* Hardcoded */}
-      <section className="min-h-screen px-10 py-10">
+      <div className="flex min-h-screen flex-col justify-center py-1">
         <div>
-          <h2 className="font-semibold	">
-            Potential implementation of carousel
-          </h2>
-          <br />
-          <Slider {...settings}>
-            <div className="px-10 align-middle">
-              <div className="flex h-[100px] w-[100%] justify-center border bg-red-100">
-                1
-              </div>
-            </div>
-            <div className="px-10 align-middle">
-              <div className="flex h-[100px] w-[100%] justify-center border bg-blue-100">
-                2
-              </div>
-            </div>
-            <div className="px-10 align-middle">
-              <div className="flex h-[100px] w-[100%] justify-center border bg-black text-white">
-                3
-              </div>
-            </div>
-          </Slider>
-
-          <br />
-          <br />
-          <br />
-
-          <section>
-            <h2 className="font-semibold	">
-              Populated via array.<code>map</code>
-            </h2>
-            <br />
-            <Slider {...settings}>{generateCards}</Slider>
-          </section>
+          <h1 className="px-20 py-8 text-4xl font-bold">Notes on Bug Fixes</h1>
         </div>
-      </section>{' '}
-      {/* 
-      <div className="flex min-h-screen flex-col items-center justify-center py-2">
-        <main className="flex w-full flex-1 flex-col items-center justify-center px-20 text-center">
-          <h1 className="text-6xl font-bold first-letter:text-[#040182]">
-            Welcome to{' '}
-            <a className="text-blue-600" href="https://nextjs.org">
-              Next.js!
-            </a>
-          </h1>
-
-          <p className="mt-3 text-2xl">
-            Get started by editing{' '}
-            <code className="rounded-md bg-gray-100 p-3 font-mono text-lg">
-              pages/index.tsx
-            </code>
-          </p>
-
-          <div className="mt-6 flex max-w-4xl flex-wrap items-center justify-around sm:w-full">
-            <a
-              href="https://nextjs.org/docs"
-              className="mt-6 w-96 rounded-xl border p-6 text-left hover:text-blue-600 focus:text-blue-600"
-            >
-              <h3 className="text-2xl font-bold">Documentation &rarr;</h3>
-              <p className="mt-4 text-xl">
-                Find in-depth information about Next.js features and API.
-              </p>
-            </a>
-
-            <a
-              href="https://nextjs.org/learn"
-              className="mt-6 w-96 rounded-xl border p-6 text-left hover:text-blue-600 focus:text-blue-600"
-            >
-              <h3 className="text-2xl font-bold">Learn &rarr;</h3>
-              <p className="mt-4 text-xl">
-                Learn about Next.js in an interactive course with quizzes!
-              </p>
-            </a>
-
-            <a
-              href="https://github.com/vercel/next.js/tree/canary/examples"
-              className="mt-6 w-96 rounded-xl border p-6 text-left hover:text-blue-600 focus:text-blue-600"
-            >
-              <h3 className="text-2xl font-bold">Examples &rarr;</h3>
-              <p className="mt-4 text-xl">
-                Discover and deploy boilerplate example Next.js projects.
-              </p>
-            </a>
-
-            <a
-              href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-              className="mt-6 w-96 rounded-xl border p-6 text-left hover:text-blue-600 focus:text-blue-600"
-            >
-              <h3 className="text-2xl font-bold">Deploy &rarr;</h3>
-              <p className="mt-4 text-xl">
-                Instantly deploy your Next.js site to a public URL with Vercel.
-              </p>
-            </a>
+        <main className="flex w-full flex-1 justify-center px-20">
+          <div className="max-w-8xl flex flex-wrap justify-between gap-2 sm:w-full">
+            {/* //////////////////////////////////////////////////////////////////////// */}
+            {generateCards}
+            {/* Card end */}
           </div>
         </main>
 
@@ -147,9 +93,72 @@ const Home: NextPage = () => {
           </a>
         </footer>
       </div>
-       */}
     </>
   )
 }
 
 export default Home
+
+{
+  /* 
+const settings = {
+    dots: true,
+    infinite: false,
+    speed: 500,
+    slidesToShow: 1.2, // modified to achieve the "showing 1/3 of next card" effect
+    slidesToScroll: 1,
+  };
+
+*/
+}
+
+{
+  /* The following "settings" come from this example: 
+   https://react-slick.neostack.com/docs/get-started/
+
+   We also need the css links on "_document.tsx" to work
+  */
+}
+
+{
+  /* 
+<section className="min-h-screen px-10 py-10">
+
+<div>
+  <h2 className="font-semibold	">
+    Potential implementation of carousel
+  </h2>
+  <br />
+  <Slider {...settings}>
+    <div className="px-10 align-middle">
+      <div className="flex h-[100px] w-[100%] justify-center border bg-red-100">
+        1
+      </div>
+    </div>
+    <div className="px-10 align-middle">
+      <div className="flex h-[100px] w-[100%] justify-center border bg-blue-100">
+        2
+      </div>
+    </div>
+    <div className="px-10 align-middle">
+      <div className="flex h-[100px] w-[100%] justify-center border bg-black text-white">
+        3
+      </div>
+    </div>
+  </Slider>
+
+  <br />
+  <br />
+  <br />
+
+  <section>
+    <h2 className="font-semibold	">
+      Populated via array.<code>map</code>
+    </h2>
+    <br />
+    <Slider {...settings}>{generateCards}</Slider>
+  </section>
+</div>
+</section>{' '}
+*/
+}
