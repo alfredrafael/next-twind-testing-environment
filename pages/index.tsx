@@ -16,12 +16,16 @@ const Home: NextPage = () => {
   const generateCards = data.map((item, i) => {
     return (
       <div className="align-middle" key={i}>
-        <div className="mt-6 w-80 rounded-xl border p-6 text-left">
+        <div
+          className="mt-6 w-80 rounded-xl border p-6 text-left"
+          style={{ backgroundColor: 'white' }}
+        >
           <div className="mb-4">
             <strong>
               <i>Title:</i>
             </strong>
-            <span className="my-3">&nbsp;{item.title}</span>
+            <br />
+            <span className="my-3">{item.title}</span>
           </div>
           <hr />
           <div className="flex">
@@ -79,7 +83,10 @@ const Home: NextPage = () => {
       <Head>
         <title>My Testing Environment</title>
       </Head>
-      <div className="flex min-h-screen flex-col justify-center py-1">
+      <div
+        className="flex min-h-screen flex-col justify-center py-1"
+        style={{ background: 'linear-gradient(#FF91AF, white)' }}
+      >
         <div>
           <h1 className="px-20 py-8 text-4xl font-bold">Notes on Bug Fixes</h1>
         </div>
