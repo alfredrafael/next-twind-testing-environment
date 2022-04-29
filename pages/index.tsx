@@ -4,7 +4,14 @@ import Image from 'next/image'
 import data from './api/data.json'
 
 const Home: NextPage = () => {
-  console.log(data)
+  let askPassword = () => {
+    let userResponse = prompt('Gandalf says: Enter password')
+
+    if (userResponse === 'bugfixes') {
+      return <Home />
+    }
+  }
+
   //Function to generate cards
   const generateCards = data.map((item, i) => {
     return (
@@ -23,14 +30,17 @@ const Home: NextPage = () => {
               <h1 className="mt-4 font-bold">
                 <i>Ticket:</i>
               </h1>
-              <a href="https://magentatech.atlassian.net/browse/TRB-1619">
+              <a
+                href={`https://magentatech.atlassian.net/browse/${item.ticket}`}
+                target="_blank"
+              >
                 <p className="font-bold text-blue-500">{item.ticket}</p>
               </a>
               <br />
               <h1 className="m-0 font-bold">
                 <i>Picture:</i>
               </h1>
-              <a href={item.picture}>
+              <a href={item.picture} target="_blank">
                 <p className="font-bold text-blue-500">Picture Link</p>
               </a>{' '}
             </div>
@@ -41,14 +51,14 @@ const Home: NextPage = () => {
               <h1 className="mt-4 font-bold">
                 <i>Page:</i>
               </h1>
-              <a href={item.pageLink}>
+              <a href={item.pageLink} target="_blank">
                 <p className="font-bold text-blue-500">{item.page}</p>
               </a>
               <br />
               <h1 className="m-0 font-bold">
                 <i>Figma:</i>
               </h1>
-              <a href={item.figma}>
+              <a href={item.figma} target="_blank">
                 <p className="font-bold text-blue-500">Design Link</p>
               </a>
             </div>

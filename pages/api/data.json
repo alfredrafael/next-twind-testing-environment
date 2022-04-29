@@ -1,20 +1,20 @@
 [
     {
-    "title": "Default product template",
+    "title": "Map Doesn't Load",
     "ticket": "TRB-1619",
     "page": "Dealer Locator",
     "pageLink": "https://trane-stg.mtechapis.com/residential/en/dealer-locator/",
-    "figma": "https://trane-stg.mtechapis.com/residential/en/dealer-locator/",
-    "picture": "https://trane-stg.mtechapis.com/residential/en/dealer-locator/",
-    "comment": "Lorem ipsum"
+    "figma": "https://www.figma.com/file/BAQhlBiB2x0CQtazGy8RkU/Dealer-Locator---TRN?node-id=1373%3A68180",
+    "picture": "http://www.alfredorafael.com/wp-content/uploads/2022/04/issue3.png",
+    "comment": "The map DOES load. It displays an alert saying 'This page can't load Google Maps correctly' but I this seems to be because the map says 'for development purposes only'. On the design part, this map would need more height & a bit less width."
   },
   {
-    "title": "Default product template",
-    "ticket": "TRB-1619",
-    "page": "Dealer Locator",
-    "pageLink": "https://trane-stg.mtechapis.com/residential/en/dealer-locator/",
-    "figma": "https://trane-stg.mtechapis.com/residential/en/dealer-locator/",
-    "picture": "https://trane-stg.mtechapis.com/residential/en/dealer-locator/",
+    "title": "Step 2: Firefox dont show house pictures",
+    "ticket": "TRB-1758",
+    "page": "BYOS",
+    "pageLink": "https://trane-stg.mtechapis.com/residential/en/resources/build-your-own-system/",
+    "figma": "https://trane-stg.mtechapis.com/residential/en/resources/build-your-own-system/",
+    "picture": "http://www.alfredorafael.com/wp-content/uploads/2022/04/Screen-Shot-2022-04-29-at-7.55.17-AM.png",
     "comment": "Lorem ipsum"
   },
   {
