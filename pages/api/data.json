@@ -1,4 +1,22 @@
 [
+  {
+    "title": "Photos Missing compared to live site",
+    "ticket": "TRB-1766",
+    "page": "BYOS",
+    "pageLink": "https://trane-stg.mtechapis.com/residential/en/resources/build-your-own-system/",
+    "figma": "https://www.figma.com/file/SKZ6yX8kpJpjq7luWzUgb0/Build-Your-Own-System-Tool---TRN?node-id=370%3A4867",
+    "picture": "http://www.alfredorafael.com/wp-content/uploads/2022/05/Screen-Shot-2022-05-02-at-2.46.59-PM.png",
+    "comment": "The proble seems to be on the URL, not the code. It would be useful to see/find where the picture lives. I doubt the problem is in the code... the other pics work. It might be the API response for that specific image?"
+  },
+  {
+    "title": "Inconsistent DealerCard height (pills)",
+    "ticket": "TRB-1730",
+    "page": "Dealer Locator",
+    "pageLink": "https://trane-stg.mtechapis.com/residential/en/dealer-locator/",
+    "figma": "https://trane-stg.mtechapis.com/residential/en/dealer-locator/",
+    "picture": "http://www.alfredorafael.com/wp-content/uploads/2022/05/QA-Height-Difference.png",
+    "comment": "I'll need to find a way to iterate thru the pill options so I can make a conditional rendering script that adds bottom-padding if there are less than (or equal to) pills 2"
+  },
     {
     "title": "Map Doesn't Load",
     "ticket": "TRB-1619",
@@ -6,26 +24,9 @@
     "pageLink": "https://trane-stg.mtechapis.com/residential/en/dealer-locator/",
     "figma": "https://www.figma.com/file/BAQhlBiB2x0CQtazGy8RkU/Dealer-Locator---TRN?node-id=1373%3A68180",
     "picture": "http://www.alfredorafael.com/wp-content/uploads/2022/04/issue3.png",
-    "comment": "The map DOES load. It displays an alert saying 'This page can't load Google Maps correctly' but I this seems to be because the map says 'for development purposes only'. On the design part, this map would need more height & a bit less width."
+    "comment": "The map DOES load, displays an alert saying 'This page can't load Google Maps correctly'. This seems to be because the map says 'for development purposes only'. On the design part, map may need more height & less width."
   },
-  {
-    "title": "Step 2: Firefox dont show house pictures",
-    "ticket": "TRB-1758",
-    "page": "BYOS",
-    "pageLink": "https://trane-stg.mtechapis.com/residential/en/resources/build-your-own-system/",
-    "figma": "https://trane-stg.mtechapis.com/residential/en/resources/build-your-own-system/",
-    "picture": "http://www.alfredorafael.com/wp-content/uploads/2022/04/Screen-Shot-2022-04-29-at-7.55.17-AM.png",
-    "comment": "Ray says: Remove grow and add a specific height to these images"
-  },
-  {
-    "title": "Default product template",
-    "ticket": "TRB-1619",
-    "page": "Dealer Locator",
-    "pageLink": "https://trane-stg.mtechapis.com/residential/en/dealer-locator/",
-    "figma": "https://trane-stg.mtechapis.com/residential/en/dealer-locator/",
-    "picture": "https://trane-stg.mtechapis.com/residential/en/dealer-locator/",
-    "comment": "Lorem ipsum"
-  },
+
   {
     "title": "Default product template",
     "ticket": "TRB-1619",
