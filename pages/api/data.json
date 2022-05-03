@@ -17,7 +17,7 @@
     "picture": "http://www.alfredorafael.com/wp-content/uploads/2022/05/QA-Height-Difference.png",
     "comment": "I'll need to find a way to iterate thru the pill options so I can make a conditional rendering script that adds bottom-padding if there are less than (or equal to) pills 2"
   },
-    {
+  {
     "title": "Map Doesn't Load",
     "ticket": "TRB-1619",
     "page": "Dealer Locator",
@@ -26,7 +26,6 @@
     "picture": "http://www.alfredorafael.com/wp-content/uploads/2022/04/issue3.png",
     "comment": "The map DOES load, displays an alert saying 'This page can't load Google Maps correctly'. This seems to be because the map says 'for development purposes only'. On the design part, map may need more height & less width."
   },
-
   {
     "title": "Default product template",
     "ticket": "TRB-1619",
